@@ -107,9 +107,9 @@ const promptQuestions = () => {
         // WHEN I choose a license for my application from a list of options
         // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application
         {
-            type: 'choices',
+            type: 'list',
             name: 'license',
-            message: 'Which licenses apply to this project (select all that apply)',
+            message: 'Which licenses apply to this project(if none apply, proceed without selecting)',
             choices: ['MIT', 'AGPL-3.0', 'MPL-2.0', 'Apache-2.0']
         },
 
