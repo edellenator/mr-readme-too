@@ -107,10 +107,10 @@ const promptQuestions = () => {
         // WHEN I choose a license for my application from a list of options
         // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application
         {
-            type: 'checkbox',
+            type: 'choices',
             name: 'license',
             message: 'Which licenses apply to this project (select all that apply)',
-            choices: ['MIT', 'GNU', 'Mozilla Public License', 'Apache']
+            choices: ['MIT', 'AGPL-3.0', 'MPL-2.0', 'Apache-2.0']
         },
 
         // WHEN I enter my GitHub username
