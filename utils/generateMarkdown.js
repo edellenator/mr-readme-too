@@ -106,7 +106,7 @@ ${renderLicenseSection(data.license)}
 
 ## Questions
 
-You can find me at my [github](https://github.com/${data.email})
+You can find me at my [github](https://github.com/${data.github})
 
 Or you can email me at:
 
