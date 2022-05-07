@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
 const fs = require ('fs')
@@ -9,8 +9,7 @@ const fs = require ('fs')
 const promptQuestions = () => {
 
     return inquirer.prompt([
-        // WHEN I enter my project title
-        // THEN this is displayed as the title of the README
+        // enter project title
         {
         type: 'input',
         name: 'title',
@@ -27,8 +26,7 @@ const promptQuestions = () => {
         },
 
 
-        // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-        // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+        // enter a description, installation instructions, usage information, contribution guidelines, and test instructions
         {
         type: 'input',
         name: 'description',
@@ -104,8 +102,7 @@ const promptQuestions = () => {
             }
         },
 
-        // WHEN I choose a license for my application from a list of options
-        // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application
+        // choose a license for my application from a list of options
         {
             type: 'list',
             name: 'license',
@@ -113,8 +110,7 @@ const promptQuestions = () => {
             choices: ['MIT', 'AGPL-3.0', 'MPL-2.0', 'Apache-2.0']
         },
 
-        // WHEN I enter my GitHub username
-        // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+        // enter my GitHub username
         {
         type: 'input',
         name: 'github',
@@ -130,8 +126,7 @@ const promptQuestions = () => {
             }
         },
 
-        // WHEN I enter my email address
-        // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+        // enter my email address
         {
         type: 'input',
         name: 'email',
@@ -149,15 +144,7 @@ const promptQuestions = () => {
     ]);
 };
 
-
-        
-
-
-
-
-
-
-// TODO: Create a function to write README file
+// write README file
 function writeFile (fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(`./dist/${fileName}`, data, err => {
@@ -176,7 +163,8 @@ function writeFile (fileName, data) {
           });
     });
 };
-// TODO: Create a function to initialize app
+
+// initialize app in asynch fashion
 function init() {
     promptQuestions().then(answers => {
         return generateMarkdown(answers);
@@ -190,5 +178,5 @@ function init() {
     });
 }
 
-// Function call to initialize app
+// initialize app
 init();
